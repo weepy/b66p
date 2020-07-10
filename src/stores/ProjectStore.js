@@ -1,6 +1,7 @@
 
 
 import { writable, get} from 'svelte/store'
+import { uuid } from '../utils.js'
 
 class ProjectStore {
 	
@@ -17,7 +18,7 @@ class ProjectStore {
 	
 	createNewTrack() {
 		const tracks = get(this.tracks)
-		tracks.push({_id:'xx',name:'# Track'})
+		tracks.push({_id:uuid(5),name:'New Track'})
 		this.tracks.set(tracks) 	
 	}
 	
